@@ -18,7 +18,7 @@ public class RegistrarPacientes {
 
     @BeforeEach
     public void openBrowser(){
-        Session.getInstance().getBrowser().get("https://theloniousmed.com/");
+        Session.getInstance().getBrowser().get("https://sismed.mikeguerra4.com/login");
     }
 
     @AfterEach
@@ -29,37 +29,15 @@ public class RegistrarPacientes {
     @Test
     public void registrarPacientes() throws InterruptedException {
 
-        String fullEmail = "diego2@gmail.com";
-        String fullPassword = "40987Diego.";
-        String fullNombres = "Diego";
-        String fullApellidoPaterno = "Bilbao";
-        String fullApellidoMaterno = "Bilbao";
-        String fullFechaNacimiento ="15/10/2004";
-        String fullTelefono = "61143119";
-        String fullTelefonoReferencia = "76259961";
-        String fullNumeroDocumento = "12452756";
+        String fullUsuario = "natabilbaocano18@gmail.com";
+        String fullContrasena = "Admin123.";
 
-        paginaInicial.registroUsuario.click();
+        paginaIncioSesion.usuario.setText(fullUsuario);
+        Thread.sleep(5000);
+        paginaIncioSesion.contrasena.setText(fullContrasena);
         Thread.sleep(5000);
 
-        paginaRegistros.email.setText(fullEmail);
-        paginaRegistros.password.setText(fullPassword);
-        paginaRegistros.nombres.setText(fullNombres);
-        paginaRegistros.apellidoPaterno.setText(fullApellidoPaterno);
-        paginaRegistros.apellidoMaterno.setText(fullApellidoMaterno);
-        paginaRegistros.fechaNacimiento.setText(fullFechaNacimiento);
-        paginaRegistros.genero.click();
-        Thread.sleep(5000);
-        paginaRegistros.generoMasculino.click();
-        Thread.sleep(5000);
-        paginaRegistros.telefono.setText(fullTelefono);
-        paginaRegistros.telefonoReferencia.setText(fullTelefonoReferencia);
-        paginaRegistros.numeroDocumento.setText(fullNumeroDocumento);
-        paginaRegistros.tipoDocumento.click();
-        Thread.sleep(5000);
-        paginaRegistros.carnetIdentidad.click();
-        Thread.sleep(5000);
-        paginaRegistros.guardarRegistro.click();
+        paginaIncioSesion.ingresar.click();
         Thread.sleep(5000);
 
         Thread.sleep(5000);
