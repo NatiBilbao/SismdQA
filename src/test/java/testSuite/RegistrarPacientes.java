@@ -1,6 +1,7 @@
 package testSuite;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,14 +33,19 @@ public class RegistrarPacientes {
         String fullUsuario = "natabilbaocano18@gmail.com";
         String fullContrasena = "Admin123.";
 
+        // Iniciar sesión
+        Thread.sleep(3000);
         paginaIncioSesion.usuario.setText(fullUsuario);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         paginaIncioSesion.contrasena.setText(fullContrasena);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
         paginaIncioSesion.ingresar.click();
         Thread.sleep(5000);
 
-        Thread.sleep(5000);
+        //Verificar que la redirección sea correcta después de login
+        String urlActual = Session.getInstance().getBrowser().getCurrentUrl();
+        String urlEsperada = "https://sismed.mikeguerra4.com/";
+        Assertions.assertEquals(urlEsperada, urlActual, "No se redirigió a la página esperada después del login.");
     }
 }
