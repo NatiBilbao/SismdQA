@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.PaginaIncioSesion;
 import pages.PaginaPrincipal;
@@ -47,5 +49,13 @@ public class RegistrarPacientes {
         String urlActual = Session.getInstance().getBrowser().getCurrentUrl();
         String urlEsperada = "https://sismed.mikeguerra4.com/";
         Assertions.assertEquals(urlEsperada, urlActual, "No se redirigió a la página esperada después del login.");
+
+        paginaPrincipal.pacientes.click();
+        Thread.sleep(2000);
+
+        //Verificar la URL después de hacer clic en "Pacientes"
+        Session.getInstance().createWait(10).until(driver -> driver.getCurrentUrl().contains("/pacientes"));
+        String urlPacientes = Session.getInstance().getBrowser().getCurrentUrl();
+        Assertions.assertTrue(urlPacientes.contains("/pacientes"), "No se llegó a la página de pacientes correctamente.");
     }
 }
