@@ -57,5 +57,10 @@ public class RegistrarPacientes {
         Session.getInstance().createWait(10).until(driver -> driver.getCurrentUrl().contains("/pacientes"));
         String urlPacientes = Session.getInstance().getBrowser().getCurrentUrl();
         Assertions.assertTrue(urlPacientes.contains("/pacientes"), "No se llegó a la página de pacientes correctamente.");
+
+        paginaPrincipal.inicio.click();
+        Thread.sleep(2000);
+
+
     }
 }
