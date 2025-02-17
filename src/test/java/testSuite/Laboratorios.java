@@ -37,6 +37,10 @@ public class Laboratorios {
         String fullUsuario = "natabilbaocano18@gmail.com";
         String fullContrasena = "Admin123.";
 
+        String fullNombreLab = "Hemograma";
+        String fullPreciosLab = "20";
+        String fullObservaciones = "En ayunas";
+
         // Iniciar sesión
         Thread.sleep(3000);
         paginaIncioSesion.usuario.setText(fullUsuario);
@@ -60,8 +64,18 @@ public class Laboratorios {
         String urlPacientes = Session.getInstance().getBrowser().getCurrentUrl();
         Assertions.assertTrue(urlPacientes.contains("/laboratorios"), "No se llegó a la página de laboratorios correctamente.");
 
-        paginaPrincipal.inicio.click();
+        paginaLaboratorios.botonAnadirLab.click();
         Thread.sleep(2000);
+
+        paginaLaboratorios.nombreLab.setText(fullNombreLab);
+        Thread.sleep(2000);
+        paginaLaboratorios.precioLab.setText(fullPreciosLab);
+        Thread.sleep(2000);
+        paginaLaboratorios.obervaciones.setText(fullObservaciones);
+        Thread.sleep(2000);
+        paginaLaboratorios.guardarLab.click();
+        Thread.sleep(5000);
+
 
     }
 }
