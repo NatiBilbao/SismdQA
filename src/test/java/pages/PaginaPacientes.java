@@ -4,7 +4,7 @@ import controls.Button;
 import controls.TextBox;
 import org.openqa.selenium.By;
 
-public class PáginaPacientes {
+public class PaginaPacientes {
 
     public Button nuevoPaciente = new Button(By.xpath("/html/body/div[2]/div[2]/div/div/div/div[1]/div[2]/div/button/span/span"));
 

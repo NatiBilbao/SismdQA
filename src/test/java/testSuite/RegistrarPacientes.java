@@ -14,7 +14,6 @@ import session.Session;
 public class RegistrarPacientes {
 
     PaginaIncioSesion paginaIncioSesion = new PaginaIncioSesion();
-
     PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
 
     ChromeDriver chrome;
@@ -60,7 +59,6 @@ public class RegistrarPacientes {
 
         paginaPrincipal.inicio.click();
         Thread.sleep(2000);
-
 
     }
 }
