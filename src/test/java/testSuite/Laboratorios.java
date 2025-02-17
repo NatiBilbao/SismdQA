@@ -76,6 +76,5 @@ public class Laboratorios {
         paginaLaboratorios.guardarLab.click();
         Thread.sleep(5000);
 
-
     }
 }
