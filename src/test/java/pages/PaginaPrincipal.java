@@ -2,6 +2,7 @@ package pages;
 
 import controls.Button;
 import controls.TextBox;
+import org.checkerframework.checker.units.qual.N;
 import org.openqa.selenium.By;
 
 public class PaginaPrincipal {
@@ -11,4 +12,6 @@ public class PaginaPrincipal {
     public Button pacientes = new Button(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div[1]/div/div/a[1]/span"));
 
     public Button laboratirios = new Button(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div[1]/div/div/a[8]/span"));
+
+    public Button ecografias = new Button(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div[1]/div/div/a[4]/span"));
 }
