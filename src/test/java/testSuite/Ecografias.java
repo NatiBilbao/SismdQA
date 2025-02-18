@@ -188,6 +188,16 @@ public class Ecografias {
         paginaEcografias.botonAnadirEco.click();
         Thread.sleep(2000);
 
+        paginaEcografias.nombreEco.setText(fullNombreEco11);
+        Thread.sleep(2000);
+        paginaEcografias.precioEco.setText(fullPrecio);
+        Thread.sleep(2000);
+        paginaEcografias.guardarEco.click();
+        Thread.sleep(5000);
+
+        paginaEcografias.botonAnadirEco.click();
+        Thread.sleep(2000);
+
         paginaEcografias.nombreEco.setText(fullNombreEco13);
         Thread.sleep(2000);
         paginaEcografias.precioEco.setText(fullPrecio);
